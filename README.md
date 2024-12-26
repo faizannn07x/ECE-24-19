@@ -400,3 +400,227 @@ int main() {
     printf("GCD = %d", a);
     return 0;
 }
+// Task 31: Find the LCM (Least Common Multiple) of two numbers
+#include <stdio.h>
+int main() {
+    int a, b, max;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+    max = (a > b) ? a : b;
+    while (1) {
+        if (max % a == 0 && max % b == 0) {
+            printf("LCM = %d", max);
+            break;
+        }
+        ++max;
+    }
+    return 0;
+}
+
+// Task 32: Reverse a given string
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char str[100], rev[100];
+    int len, i;
+    printf("Enter a string: ");
+    scanf("%s", str);
+    len = strlen(str);
+    for (i = 0; i < len; i++) {
+        rev[i] = str[len - i - 1];
+    }
+    rev[i] = '\0';
+    printf("Reversed string: %s", rev);
+    return 0;
+}
+
+// Task 33: Check whether a string is palindrome or not
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char str[100];
+    int len, i, isPalindrome = 1;
+    printf("Enter a string: ");
+    scanf("%s", str);
+    len = strlen(str);
+    for (i = 0; i < len / 2; i++) {
+        if (str[i] != str[len - i - 1]) {
+            isPalindrome = 0;
+            break;
+        }
+    }
+    if (isPalindrome)
+        printf("The string is a palindrome.");
+    else
+        printf("The string is not a palindrome.");
+    return 0;
+}
+
+// Task 34: Count the number of vowels in a string
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char str[100];
+    int count = 0;
+    printf("Enter a string: ");
+    scanf("%s", str);
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u' ||
+            str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'U') {
+            count++;
+        }
+    }
+    printf("Number of vowels: %d", count);
+    return 0;
+}
+
+// Task 35: Count the number of words in a string
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char str[100];
+    int count = 1;
+    printf("Enter a string: ");
+    scanf(" %[^"]", str);
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] == ' ')
+            count++;
+    }
+    printf("Number of words: %d", count);
+    return 0;
+}
+
+// Task 36: Convert a string to uppercase
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char str[100];
+    printf("Enter a string: ");
+    scanf("%s", str);
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] >= 'a' && str[i] <= 'z') {
+            str[i] = str[i] - 32;
+        }
+    }
+    printf("Uppercase string: %s", str);
+    return 0;
+}
+
+// Task 37: Convert a string to lowercase
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char str[100];
+    printf("Enter a string: ");
+    scanf("%s", str);
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] >= 'A' && str[i] <= 'Z') {
+            str[i] = str[i] + 32;
+        }
+    }
+    printf("Lowercase string: %s", str);
+    return 0;
+}
+
+// Task 38: Find the length of a string
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char str[100];
+    printf("Enter a string: ");
+    scanf("%s", str);
+    printf("Length of the string: %ld", strlen(str));
+    return 0;
+}
+
+// Task 39: Concatenate two strings
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char str1[100], str2[100], result[200];
+    printf("Enter first string: ");
+    scanf("%s", str1);
+    printf("Enter second string: ");
+    scanf("%s", str2);
+    strcpy(result, str1);
+    strcat(result, str2);
+    printf("Concatenated string: %s", result);
+    return 0;
+}
+
+// Task 40: Compare two strings
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char str1[100], str2[100];
+    printf("Enter first string: ");
+    scanf("%s", str1);
+    printf("Enter second string: ");
+    scanf("%s", str2);
+    if (strcmp(str1, str2) == 0)
+        printf("Strings are equal.");
+    else
+        printf("Strings are not equal.");
+    return 0;
+}
+
+// Task 41: Swap two numbers using a temporary variable
+#include <stdio.h>
+int main() {
+    int a, b, temp;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+    temp = a;
+    a = b;
+    b = temp;
+    printf("After swapping: a = %d, b = %d", a, b);
+    return 0;
+}
+
+// Task 42: Swap two numbers without using a temporary variable
+#include <stdio.h>
+int main() {
+    int a, b;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+    a = a + b;
+    b = a - b;
+    a = a - b;
+    printf("After swapping: a = %d, b = %d", a, b);
+    return 0;
+}
+
+// Task 43: Generate a random number
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main() {
+    srand(time(0));
+    printf("Random number: %d", rand());
+    return 0;
+}
+
+// Task 44: Generate a random number within a range
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main() {
+    int lower, upper;
+    printf("Enter the lower and upper limit: ");
+    scanf("%d %d", &lower, &upper);
+    srand(time(0));
+    printf("Random number: %d", (rand() % (upper - lower + 1)) + lower);
+    return 0;
+}
+
+// Task 45: Implement a calculator
+#include <stdio.h>
+int main() {
+    char operator;
+    double num1, num2, result;
+    printf("Enter an operator (+, -, *, /): ");
+    scanf(" %c", &operator);
+    printf("Enter two numbers: ");
+    scanf("%lf %lf", &num1, &num2);
+    switch (operator) {
+        case '+':
