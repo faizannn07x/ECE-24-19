@@ -624,3 +624,469 @@ int main() {
     scanf("%lf %lf", &num1, &num2);
     switch (operator) {
         case '+':
+
+
+        // Task 46: Find the largest of three numbers
+#include <stdio.h>
+int main() {
+    int a, b, c;
+    printf("Enter three numbers: ");
+    scanf("%d %d %d", &a, &b, &c);
+    if (a >= b && a >= c)
+        printf("%d is the largest number.", a);
+    else if (b >= a && b >= c)
+        printf("%d is the largest number.", b);
+    else
+        printf("%d is the largest number.", c);
+    return 0;
+}
+
+// Task 47: Check if a number is even or odd
+#include <stdio.h>
+int main() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    if (num % 2 == 0)
+        printf("%d is even.", num);
+    else
+        printf("%d is odd.", num);
+    return 0;
+}
+
+// Task 48: Check if a year is a leap year
+#include <stdio.h>
+int main() {
+    int year;
+    printf("Enter a year: ");
+    scanf("%d", &year);
+    if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+        printf("%d is a leap year.", year);
+    else
+        printf("%d is not a leap year.", year);
+    return 0;
+}
+
+// Task 49: Check if a character is a vowel or consonant
+#include <stdio.h>
+int main() {
+    char ch;
+    printf("Enter a character: ");
+    scanf(" %c", &ch);
+    if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
+        ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U')
+        printf("%c is a vowel.", ch);
+    else
+        printf("%c is a consonant.", ch);
+    return 0;
+}
+
+// Task 50: Find the ASCII value of a character
+#include <stdio.h>
+int main() {
+    char ch;
+    printf("Enter a character: ");
+    scanf(" %c", &ch);
+    printf("ASCII value of %c is %d.", ch, ch);
+    return 0;
+}
+
+// Task 51: Display multiplication table of a number
+#include <stdio.h>
+int main() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    for (int i = 1; i <= 10; i++) {
+        printf("%d x %d = %d\n", n, i, n * i);
+    }
+    return 0;
+}
+
+// Task 52: Find the sum of natural numbers up to n
+#include <stdio.h>
+int main() {
+    int n, sum = 0;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    for (int i = 1; i <= n; i++) {
+        sum += i;
+    }
+    printf("Sum = %d", sum);
+    return 0;
+}
+
+// Task 53: Find the sum of digits of a number
+#include <stdio.h>
+int main() {
+    int n, sum = 0;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    while (n != 0) {
+        sum += n % 10;
+        n /= 10;
+    }
+    printf("Sum of digits = %d", sum);
+    return 0;
+}
+
+// Task 54: Reverse a number
+#include <stdio.h>
+int main() {
+    int n, reverse = 0;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    while (n != 0) {
+        reverse = reverse * 10 + n % 10;
+        n /= 10;
+    }
+    printf("Reversed number = %d", reverse);
+    return 0;
+}
+
+// Task 55: Check if a number is a palindrome
+#include <stdio.h>
+int main() {
+    int n, original, reverse = 0;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    original = n;
+    while (n != 0) {
+        reverse = reverse * 10 + n % 10;
+        n /= 10;
+    }
+    if (original == reverse)
+        printf("%d is a palindrome.", original);
+    else
+        printf("%d is not a palindrome.", original);
+    return 0;
+}
+
+// Task 56: Find the factorial of a number using recursion
+#include <stdio.h>
+long long factorial(int n) {
+    if (n == 0 || n == 1)
+        return 1;
+    return n * factorial(n - 1);
+}
+int main() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    printf("Factorial of %d = %lld", n, factorial(n));
+    return 0;
+}
+
+// Task 57: Generate Fibonacci series up to n terms using recursion
+#include <stdio.h>
+int fibonacci(int n) {
+    if (n == 0)
+        return 0;
+    if (n == 1)
+        return 1;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+int main() {
+    int n;
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+    printf("Fibonacci series: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", fibonacci(i));
+    }
+    return 0;
+}
+
+// Task 58: Find GCD of two numbers using recursion
+#include <stdio.h>
+int gcd(int a, int b) {
+    if (b == 0)
+        return a;
+    return gcd(b, a % b);
+}
+int main() {
+    int a, b;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+    printf("GCD = %d", gcd(a, b));
+    return 0;
+}
+
+// Task 59: Find LCM of two numbers using GCD
+#include <stdio.h>
+int gcd(int a, int b) {
+    if (b == 0)
+        return a;
+    return gcd(b, a % b);
+}
+int main() {
+    int a, b;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+    printf("LCM = %d", (a * b) / gcd(a, b));
+    return 0;
+}
+
+// Task 60: Convert binary to decimal
+#include <stdio.h>
+#include <math.h>
+int main() {
+    int binary, decimal = 0, base = 0;
+    printf("Enter a binary number: ");
+    scanf("%d", &binary);
+    while (binary != 0) {
+        decimal += (binary % 10) * pow(2, base);
+        binary /= 10;
+        base++;
+    }
+    printf("Decimal equivalent = %d", decimal);
+    return 0;
+}
+
+// Task 61: Convert decimal to binary
+#include <stdio.h>
+int main() {
+    int decimal, binary[32], index = 0;
+    printf("Enter a decimal number: ");
+    scanf("%d", &decimal);
+    while (decimal != 0) {
+        binary[index++] = decimal % 2;
+        decimal /= 2;
+    }
+    printf("Binary equivalent: ");
+    for (int i = index - 1; i >= 0; i--) {
+        printf("%d", binary[i]);
+    }
+    return 0;
+}
+
+// Task 62: Check if a number is a power of 2
+#include <stdio.h>
+int main() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    if (n > 0 && (n & (n - 1)) == 0)
+        printf("%d is a power of 2.", n);
+    else
+        printf("%d is not a power of 2.", n);
+    return 0;
+}
+
+// Task 63: Swap two numbers using bitwise XOR
+#include <stdio.h>
+int main() {
+    int a, b;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+    a = a ^ b;
+    b = a ^ b;
+    a = a ^ b;
+    printf("After swapping: a = %d, b = %d", a, b);
+    return 0;
+}
+
+// Task 64: Count the number of set bits in a number
+#include <stdio.h>
+int main() {
+    int n, count = 0;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    while (n != 0) {
+        count += n & 1;
+        n >>= 1;
+    }
+    printf("Number of set bits = %d", count);
+    return 0;
+}
+
+// Task 65: Check if a number is a palindrome using recursion
+#include <stdio.h>
+int reverse(int n, int temp) {
+    if (n == 0)
+        return temp;
+    temp = (temp * 10) + (n % 10);
+    return reverse(n / 10, temp);
+}
+int main() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    if (n == reverse(n, 0))
+        printf("%d is a palindrome.", n);
+    else
+        printf("%d is not a palindrome.", n);
+    return 0;
+}
+
+// Task 66: Calculate power of a number using recursion
+#include <stdio.h>
+long long power(int base, int exp) {
+    if (exp == 0)
+        return 1;
+    return base * power(base, exp - 1);
+}
+int main() {
+    int base, exp;
+    printf("Enter base and exponent: ");
+    scanf("%d %d", &base, &exp);
+    printf("%d^%d = %lld", base, exp, power(base, exp));
+    return 0;
+}
+
+// Task 67: Find the nth Fibonacci number using recursion
+#include <stdio.h>
+int fibonacci(int n) {
+    if (n <= 1)
+        return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+int main() {
+    int n;
+    printf("Enter the term: ");
+    scanf("%d", &n);
+    printf("%dth Fibonacci number = %d", n, fibonacci(n));
+    return 0;
+}
+
+// Task 68: Check if a string is palindrome using recursion
+#include <stdio.h>
+#include <string.h>
+int isPalindrome(char str[], int start, int end) {
+    if (start >= end)
+        return 1;
+    if (str[start] != str[end])
+        return 0;
+    return isPalindrome(str, start + 1, end - 1);
+}
+int main() {
+    char str[100];
+    printf("Enter a string: ");
+    scanf("%s", str);
+    if (isPalindrome(str, 0, strlen(str) - 1))
+        printf("The string is a palindrome.");
+    else
+        printf("The string is not a palindrome.");
+    return 0;
+}
+
+// Task 69: Find the sum of an array using recursion
+#include <stdio.h>
+int sumArray(int arr[], int n) {
+    if (n == 0)
+        return 0;
+    return arr[n - 1] + sumArray(arr, n - 1);
+}
+int main() {
+    int n;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+    int arr[n];
+    printf("Enter the elements: ");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    printf("Sum of array elements = %d", sumArray(arr, n));
+    return 0;
+}
+
+// Task 70: Reverse an array using recursion
+#include <stdio.h>
+void reverseArray(int arr[], int start, int end) {
+    if (start >= end)
+        return;
+    int temp = arr[start];
+    arr[start] = arr[end];
+    arr[end] = temp;
+    reverseArray(arr, start + 1, end - 1);
+}
+int main() {
+    int n;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+    int arr[n];
+    printf("Enter the elements: ");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    reverseArray(arr, 0, n - 1);
+    printf("Reversed array: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    return 0;
+}
+
+// Task 71: Find the maximum element in an array using recursion
+#include <stdio.h>
+int findMax(int arr[], int n) {
+    if (n == 1)
+        return arr[0];
+    int max = findMax(arr, n - 1);
+    return (arr[n - 1] > max) ? arr[n - 1] : max;
+}
+int main() {
+    int n;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+    int arr[n];
+    printf("Enter the elements: ");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    printf("Maximum element = %d", findMax(arr, n));
+    return 0;
+}
+
+// Task 72: Calculate the sum of digits of a number using recursion
+#include <stdio.h>
+int sumDigits(int n) {
+    if (n == 0)
+        return 0;
+    return (n % 10) + sumDigits(n / 10);
+}
+int main() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    printf("Sum of digits = %d", sumDigits(n));
+    return 0;
+}
+
+// Task 73: Check if a number is prime using recursion
+#include <stdio.h>
+int isPrime(int n, int i) {
+    if (n <= 2)
+        return (n == 2) ? 1 : 0;
+    if (n % i == 0)
+        return 0;
+    if (i * i > n)
+        return 1;
+    return isPrime(n, i + 1);
+}
+int main() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    if (isPrime(n, 2))
+        printf("%d is a prime number.", n);
+    else
+        printf("%d is not a prime number.", n);
+    return 0;
+}
+
+// Task 74: Find the nth power of a number using recursion
+#include <stdio.h>
+long long power(int base, int exp) {
+    if (exp == 0)
+        return 1;
+    return base * power(base, exp - 1);
+}
+int main() {
+    int base, exp;
+    printf("Enter base and exponent: ");
+    scanf("%d %d", &base, &exp);
+    printf("%d^%d = %lld", base, exp, power(base, exp));
+    return 0;
+}
+
