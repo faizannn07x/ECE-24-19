@@ -128,69 +128,275 @@ void compareThreeNumbers() {
     printf("Enter three numbers: ");
     if (scanf("%d %d %d", &a, &b, &c) != 3) {
         printf("Invalid input.\n");
-        return;
-    }
-    if (a > b && a > c)
-        printf("%d is the greatest\n", a);
-    else if (b > a && b > c)
-        printf("%d is the greatest\n", b);
-    else
-        printf("%d is the greatest\n", c);
-}
-
-// 11. Grading based on percentage using if-else
-void gradePercentage() {
-    float percentage;
-    printf("Enter percentage: ");
-    if (scanf("%f", &percentage) != 1 || percentage < 0 || percentage > 100) {
-        printf("Invalid input.\n");
-        return;
-    }
-    if (percentage >= 90)
-        printf("Grade: A\n");
-    else if (percentage >= 80)
-        printf("Grade: B\n");
-    else if (percentage >= 70)
-        printf("Grade: C\n");
-    else if (percentage >= 60)
-        printf("Grade: D\n");
-    else
-        printf("Grade: F\n");
-}
-
-// 12. Display greeting using switch-case
-void greetingSwitchCase() {
-    int option;
-    printf("Enter 1 for Salaam, 2 for Aadab, 3 for Hello: ");
-    if (scanf("%d", &option) != 1) {
-        printf("Invalid input.\n");
-        return;
-    }
-    switch (option) {
-    case 1:
-        printf("Salaam\n");
-        break;
-    case 2:
-        printf("Aadab\n");
-        break;
-    case 3:
-        printf("Hello\n");
-        break;
-    default:
-        printf("Incorrect option\n");
-    }
-}
-
-// 13. Display series 1 2 3 4 ... n
-void displaySeries() {
+        return; 
+        // Task 13: Display the series 1 2 3 ... n
+#include <stdio.h>
+int main() {
     int n;
-    printf("Enter n: ");
-    if (scanf("%d", &n) != 1 || n <= 0) {
-        printf("Invalid input.\n");
-        return;
-    }
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
     for (int i = 1; i <= n; i++) {
         printf("%d ", i);
     }
-    printf("\n");
+    return 0;
+}
+
+// Task 13: Display the series 1 2 3 ... n
+#include <stdio.h>
+int main() {
+    int n;
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+    for (int i = 1; i <= n; i++) {
+        printf("%d ", i);
+    }
+    return 0;
+}
+
+// Task 14: Display the series n n-1 ... 1
+#include <stdio.h>
+int main() {
+    int n;
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+    for (int i = n; i >= 1; i--) {
+        printf("%d ", i);
+    }
+    return 0;
+}
+
+// Task 15: Display all even numbers from 1 to 100
+#include <stdio.h>
+int main() {
+    for (int i = 2; i <= 100; i += 2) {
+        printf("%d ", i);
+    }
+    return 0;
+}
+
+// Task 16: Find the sum of the series 1 2 3 ... n
+#include <stdio.h>
+int main() {
+    int n, sum = 0;
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+    for (int i = 1; i <= n; i++) {
+        sum += i;
+    }
+    printf("Sum = %d", sum);
+    return 0;
+}
+
+// Task 17: Find the product of the series 1 2 3 ... n
+#include <stdio.h>
+int main() {
+    int n, product = 1;
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+    for (int i = 1; i <= n; i++) {
+        product *= i;
+    }
+    printf("Product = %d", product);
+    return 0;
+}
+
+// Task 18: Find the factorial of a number entered by the user
+#include <stdio.h>
+int main() {
+    int n, fact = 1;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    for (int i = 1; i <= n; i++) {
+        fact *= i;
+    }
+    printf("Factorial = %d", fact);
+    return 0;
+}
+
+// Task 19: Find all factors of a natural number
+#include <stdio.h>
+int main() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    printf("Factors of %d are: ", n);
+    for (int i = 1; i <= n; i++) {
+        if (n % i == 0) {
+            printf("%d ", i);
+        }
+    }
+    return 0;
+}
+
+// Task 20: Check whether a number is prime or not
+#include <stdio.h>
+int main() {
+    int n, isPrime = 1;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    for (int i = 2; i <= n / 2; i++) {
+        if (n % i == 0) {
+            isPrime = 0;
+            break;
+        }
+    }
+    if (isPrime && n > 1)
+        printf("%d is a prime number.", n);
+    else
+        printf("%d is not a prime number.", n);
+    return 0;
+}
+
+// Task 21: Display the series 2 4 8 16 ...
+#include <stdio.h>
+int main() {
+    int n, term = 2;
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+    for (int i = 1; i <= n; i++) {
+        printf("%d ", term);
+        term *= 2;
+    }
+    return 0;
+}
+
+// Task 22: Display the series 2 4 16 256 ...
+#include <stdio.h>
+int main() {
+    int n, term = 2;
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+    for (int i = 1; i <= n; i++) {
+        printf("%d ", term);
+        term = term * term;
+    }
+    return 0;
+}
+
+// Task 23: Display the Fibonacci series up to n terms
+#include <stdio.h>
+int main() {
+    int n, t1 = 0, t2 = 1, nextTerm;
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+    printf("Fibonacci series: ");
+    for (int i = 1; i <= n; i++) {
+        printf("%d ", t1);
+        nextTerm = t1 + t2;
+        t1 = t2;
+        t2 = nextTerm;
+    }
+    return 0;
+}
+
+// Task 24: Display the table of all integers from 2 to 10
+#include <stdio.h>
+int main() {
+    for (int i = 2; i <= 10; i++) {
+        printf("Table of %d:\n", i);
+        for (int j = 1; j <= 10; j++) {
+            printf("%d x %d = %d\n", i, j, i * j);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+// Task 25: Display the series 1 2 3 ... with nested loops
+#include <stdio.h>
+int main() {
+    int n;
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= i; j++) {
+            printf("%d ", j);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+// Task 26: Display the series 1 1/2 1/3 ...
+#include <stdio.h>
+int main() {
+    int n;
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+    double sum = 0;
+    for (int i = 1; i <= n; i++) {
+        sum += 1.0 / i;
+        printf("1/%d ", i);
+    }
+    printf("\nSum = %.2f", sum);
+    return 0;
+}
+
+// Task 27: Find sum of series 1 + 1/2 + 1/3 + ... + 1/n
+#include <stdio.h>
+int main() {
+    int n;
+    double sum = 0.0;
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+    for (int i = 1; i <= n; i++) {
+        sum += 1.0 / i;
+    }
+    printf("Sum = %.2f", sum);
+    return 0;
+}
+
+// Task 28: Display the digits of any natural number in reverse order
+#include <stdio.h>
+int main() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    printf("Digits in reverse order: ");
+    while (n != 0) {
+        printf("%d ", n % 10);
+        n /= 10;
+    }
+    return 0;
+}
+
+// Task 29: Check whether a number is Armstrong number or not
+#include <stdio.h>
+#include <math.h>
+int main() {
+    int n, originalNum, remainder, result = 0, numDigits = 0;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    originalNum = n;
+    while (originalNum != 0) {
+        originalNum /= 10;
+        ++numDigits;
+    }
+    originalNum = n;
+    while (originalNum != 0) {
+        remainder = originalNum % 10;
+        result += pow(remainder, numDigits);
+        originalNum /= 10;
+    }
+    if (result == n)
+        printf("%d is an Armstrong number.", n);
+    else
+        printf("%d is not an Armstrong number.", n);
+    return 0;
+}
+
+// Task 30: Find the GCD (Greatest Common Divisor) of two numbers
+#include <stdio.h>
+int main() {
+    int a, b;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+    while (a != b) {
+        if (a > b)
+            a -= b;
+        else
+            b -= a;
+    }
+    printf("GCD = %d", a);
+    return 0;
 }
