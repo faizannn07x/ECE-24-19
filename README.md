@@ -1,30 +1,24 @@
 # ECE-24-19
 Programming for problem solving.
 
-#include <stdio.h>
-
-#include <stdio.h>
-#include <math.h>
-#include <string.h>
 
 // 1. Display your name
-void displayName() {
-    printf("My name is John Doe\n");
+#include <stdio.h>
+int main() {
+    printf("My name is faizan\n");
 }
 
-// 2. Add two numbers and display the result
-void addTwoNumbers() {
-    int a, b;
-    printf("Enter two numbers: ");
-    if (scanf("%d %d", &a, &b) != 2) {
-        printf("Invalid input.\n");
-        return;
+// 2. Add two numbers
+    #include <stdio.h>
+    int main(){
+    int a = 5, b = 10;
+        printf("sum % d\n",a+b);
+        return 0;
     }
-    printf("Sum of %d and %d is %d\n", a, b, a + b);
-}
 
 // 3. Read two numbers from keyboard and compare them
-void compareTwoNumbers() {
+#include <stdio.h>
+int main(){
     int num1, num2;
     printf("Enter two numbers: ");
     if (scanf("%d %d", &num1, &num2) != 2) {
@@ -40,7 +34,8 @@ void compareTwoNumbers() {
 }
 
 // 4. Swap two numbers
-void swapTwoNumbers() {
+#include <stdio.h>
+int main(){
     int a, b, temp;
     printf("Enter two numbers to swap: ");
     if (scanf("%d %d", &a, &b) != 2) {
@@ -55,7 +50,8 @@ void swapTwoNumbers() {
 }
 
 // 5. Define and use a constant
-void useConstant() {
+#include <stdio.h>
+int main(){
     const float PI = 3.14159;
     float radius, area;
     printf("Enter radius of circle: ");
@@ -68,7 +64,8 @@ void useConstant() {
 }
 
 // 6. Use math library functions
-void useMathLibrary() {
+#include <stdio.h>
+int main(){
     double num;
     printf("Enter a number: ");
     if (scanf("%lf", &num) != 1 || num < 0) {
@@ -80,7 +77,8 @@ void useMathLibrary() {
 }
 
 // 7. Check whether a number is even or odd
-void checkEvenOdd() {
+#include <stdio.h>
+int main(){
     int num;
     printf("Enter a number: ");
     if (scanf("%d", &num) != 1) {
@@ -91,7 +89,8 @@ void checkEvenOdd() {
 }
 
 // 8. Find roots of a quadratic equation
-void quadraticRoots() {
+#include <stdio.h>
+int main(){
     float a, b, c, discriminant, root1, root2;
     printf("Enter coefficients a, b, and c: ");
     if (scanf("%f %f %f", &a, &b, &c) != 3 || a == 0) {
@@ -112,22 +111,24 @@ void quadraticRoots() {
 }
 
 // 9. Use ternary operator
-void ternaryExample() {
+#include <stdio.h>
+int main(){
     int num;
     printf("Enter a number: ");
     if (scanf("%d", &num) != 1) {
-        printf("Invalid input.\n");
+        printf("valid input.\n");
         return;
     }
     printf("%d is %s\n", num, (num % 2 == 0) ? "Even" : "Odd");
 }
 
 // 10. Compare three numbers using nested if-else
-void compareThreeNumbers() {
+#include <stdio.h>
+int main(){
     int a, b, c;
     printf("Enter three numbers: ");
     if (scanf("%d %d %d", &a, &b, &c) != 3) {
-        printf("Invalid input.\n");
+        printf("valid input.\n");
         return; 
         // Task 13: Display the series 1 2 3 ... n
 #include <stdio.h>
